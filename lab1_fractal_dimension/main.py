@@ -15,7 +15,7 @@ def grayscale_img(path):
     cv2.waitKey(0)
     cv2.imwrite(path, img)
 
-def fractal_dimention(img):
+def fractal_dimension(img):
     img_bw = cv2.threshold(img, 127, 255, cv2.THRESH_BINARY)[1] / 255
     
     min_dimension = min(img_bw.shape[0], img_bw.shape[1])
@@ -38,5 +38,5 @@ paths = ["../koch.png", "../sierpinski.png", "../bricks1.png"]
 
 for path in paths:
     img = cv2.imread(path)
-    res = fractal_dimention(img)
+    res = fractal_dimension(img)
     print("{:20}: {}".format(path, res))
