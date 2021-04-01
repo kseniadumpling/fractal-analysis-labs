@@ -88,7 +88,8 @@ def calculate_D(img_path, max_delta, cell_size):
     return 2 - np.polyfit(np.log(sum_A), np.log(np.arange(1, max_delta+1)), 1)[0] * (-1)
 
 
-paths = ["../koch.png", "../sierpinski.png", "../bricks1.png"]
+paths = ["../koch.png", "../bricks1.png",
+         "../leukemia.jpg", "../textpaper.jpg"]
 for path in paths:
-    res = calculate_D(path, 2, 100)
-    print("{:20}: {}".format(path, res))
+    res = calculate_D(path, 2, 50)
+    print("{:20}: {}".format(path, round(res, 3)))
